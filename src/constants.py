@@ -3,7 +3,6 @@ Pi Coin Configuration Constants
 This module contains constants related to the Pi Coin cryptocurrency, designed as a stablecoin.
 """
 
-import os
 from typing import List
 
 class PiCoinConfig:
@@ -59,26 +58,16 @@ class PiCoinConfig:
     STABILITY_FUND: float = 10_000_000  # Fund to stabilize the price of Pi Coin
     BUYBACK_THRESHOLD: float = 0.95  # Price threshold for buyback operations
 
-    @classmethod
-    def validate(cls):
-        """Validate the configuration constants."""
-        assert cls.VALUE > 0, "Pi Coin value must be positive."
-        assert cls.SUPPLY > 0, "Pi Coin supply must be positive."
-        assert cls.TRANSACTION_FEE >= 0, "Transaction fee cannot be negative."
-        assert cls.MIN_STAKE_AMOUNT > 0, "Minimum stake amount must be positive."
-        assert cls.RESERVE_RATIO >= 0, "Reserve ratio must be non-negative."
-        assert cls.STABILITY_FUND >= 0, "Stability fund must be non-negative."
+    # Price Oracle
+    PRICE_ORACLE_URLS: List[str] = [
+        "https://api.example.com/price",  # Replace with actual price API URLs
+        "https://api.anotherexample.com/price"
+    ]
 
-    @classmethod
-    def load_from_env(cls):
-        """Load configuration from environment variables if available."""
-        cls.VALUE = float(os.getenv("PI_COIN_VALUE", cls.VALUE))
-        cls.SUPPLY = int(os.getenv("PI_COIN_SUPPLY", cls.SUPPLY))
-        cls.TRANSACTION_FEE = float(os.getenv ("PI_COIN_TRANSACTION_FEE", cls.TRANSACTION_FEE))
-        cls.MIN_STAKE_AMOUNT = float(os.getenv("PI_COIN_MIN_STAKE_AMOUNT", cls.MIN_STAKE_AMOUNT))
-        cls.RESERVE_RATIO = float(os.getenv("PI_COIN_RESERVE_RATIO", cls.RESERVE_RATIO))
-        cls.STABILITY_FUND = float(os.getenv("PI_COIN_STABILITY_FUND", cls.STABILITY_FUND)) ```python
-        cls.KYC_REQUIRED = os.getenv("PI_COIN_KYC_REQUIRED", cls.KYC_REQUIRED) == "True"
-        cls.COMPLIANCE_JURISDICTIONS = os.getenv("PI_COIN_COMPLIANCE_JURISDICTIONS", ",".join(cls.COMPLIANCE_JURISDICTIONS)).split(",")
-        cls.RESERVE_CURRENCY = os.getenv("PI_COIN_RESERVE_CURRENCY", cls.RESERVE_CURRENCY)
-        cls.RESERVE_AUDIT_FREQUENCY = os.getenv("PI_COIN_RESERVE_AUDIT_FREQUENCY", cls.RESERVE_AUDIT_FREQUENCY)
+    # Governance Model
+    GOVERNANCE_MODEL: str = "Decentralized"  # Governance model for Pi Coin
+
+    # Notification Settings
+    NOTIFICATION_CHANNELS: List[str] = ["email", "sms"]  # Supported notification channels
+
+    # Additional constants can be added here as needed
