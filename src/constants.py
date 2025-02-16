@@ -3,7 +3,7 @@ Pi Coin Configuration Constants
 This module contains constants related to the Pi Coin cryptocurrency, designed as a stablecoin.
 """
 
-from typing import List, Dict, Tuple
+from typing import List, Dict
 
 class PiCoinConfig:
     """Configuration constants for Pi Coin as a stablecoin."""
@@ -47,7 +47,7 @@ class PiCoinConfig:
     MINING_DIFFICULTY: int = 1000  # Difficulty level for mining Pi Coin
     MINING_POOL_FEE: float = 0.02  # Fee for mining pool participation
     MINING_REWARD_HALVING: int = 210_000  # Blocks after which mining reward is halved
-    MINING_ALGORITHM: str = "SHA-256"  # Algorithm used for mining
+    MIN ING_ALGORITHM: str = "SHA-256"  # Algorithm used for mining
     MINING_REWARD_DISTRIBUTION: Dict[str, float] = {  # Distribution of mining rewards
         "miners": 0.8,
         "development": 0.1,
@@ -64,7 +64,8 @@ class PiCoinConfig:
     NETWORK_LATENCY_THRESHOLD: int = 200  # Maximum latency in ms for node connections
     PEER_DISCOVERY_INTERVAL: int = 60  # Interval for discovering new peers in seconds
     NETWORK_SECURITY_LEVEL: str = "high"  # Security level of the network
-    NETWORK_MONITORING_ENABLED: bool = True  # Enable network monitoring NETWORK_PARTITION_TOLERANCE: str = "high"  # Tolerance level for network partitions
+    NETWORK_MONITORING_ENABLED: bool = True  # Enable network monitoring
+    NETWORK_PARTITION_TOLERANCE: str = "high"  # Tolerance level for network partitions
     NETWORK_SCALABILITY_FEATURES: List[str] = ["Sharding", "Layer 2 Solutions"]  # Scalability features
 
     # Staking Constants
@@ -124,7 +125,8 @@ class PiCoinConfig:
     RESERVE_BUFFER: float = 0.05  # Buffer percentage for reserve management
     RESERVE_GROWTH_STRATEGY: str = "conservative"  # Strategy for reserve growth
     RESERVE_DIVERSIFICATION_STRATEGY: List[str] = ["Bonds", "Real Estate", "Commodities", "Cryptocurrencies"]  # Diversification strategy
-    RESERVE_TRANSPARENCY_REPORTING: bool = True  # Enable transparency reporting for reserves RESERVE_RISK_MANAGEMENT_STRATEGY: str = "Dynamic"  # Strategy for managing reserve risks
+    RESERVE_TRANSPARENCY_REPORTING: bool = True  # Enable transparency reporting for reserves
+    RESERVE_RISK_MANAGEMENT_STRATEGY: str = "Dynamic"  # Strategy for managing reserve risks
 
     # Stability Mechanisms
     STABILITY_FUND: float = 10_000_000  # Fund to stabilize the price of Pi Coin
@@ -171,7 +173,7 @@ class PiCoinConfig:
     NOTIFICATION_RATE_LIMIT: int = 10  # Maximum notifications per hour
     NOTIFICATION_LOGGING_ENABLED: bool = True  # Enable logging of notifications
     NOTIFICATION_TEMPLATE: Dict[str, str] = {  # Templates for notifications
-        "transaction_success": "Your transaction of {amount} Pi was successful.",
+        " transaction_success": "Your transaction of {amount} Pi was successful.",
         "transaction_failure": "Your transaction of {amount} Pi failed.",
         "stake_success": "Your stake of {amount} Pi was successful.",
         "stake_failure": "Your stake of {amount} Pi failed."
@@ -199,7 +201,7 @@ class PiCoinConfig:
     SUSTAINABILITY_INITIATIVES: List[str] = ["Renewable Energy", "Carbon Credits", "Energy Efficiency"]  # Initiatives for sustainability
     GREEN_CERTIFICATION: bool = True  # Certification for environmentally friendly practices
     ENVIRONMENTAL_IMPACT_REPORTING: bool = True  # Enable reporting on environmental impact
- SUSTAINABILITY_TRANSPARENCY: bool = True  # Enable transparency in sustainability efforts
+    SUSTAINABILITY_TRANSPARENCY: bool = True  # Enable transparency in sustainability efforts
     ENVIRONMENTAL_RISK_ASSESSMENT: str = "annual"  # Frequency of environmental risk assessments
 
     # User Experience Enhancements
@@ -220,8 +222,6 @@ class PiCoinConfig:
     SYSTEM_SCALABILITY_TESTING: bool = True  # Enable testing for system scalability
 
     # Future-Proofing
-    VERSION: str = "1.0.0"  # Current version of the configuration
-    RELEASE_DATE: str = "2025-01-01"  # Release date of the current version
     ROADMAP_URL: str = "https://roadmap.minepi.com"  # Link to project roadmap
     FUTURE_UPGRADE_PLANS: str = "https://upgrades.minepi.com"  # Link to future upgrade plans
     INNOVATION_FUND: float = 500_000  # Fund for research and development of new features
