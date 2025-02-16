@@ -141,7 +141,7 @@ class PiCoinConfig:
 
     # Price Oracle
     PRICE_ORACLE_URLS: List[str] = [
-        "https://api.example.com/price",  # Replace with actual price API URLs
+        "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest",  # Replace with actual price API URLs
         "https://api.anotherexample.com/price"
     ]
     ORACLE_UPDATE_INTERVAL: int = 300  # Update interval for price oracles in seconds
