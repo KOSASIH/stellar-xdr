@@ -205,8 +205,8 @@ class PiCoinConfig:
     # User Experience Enhancements
     USER_INTERFACE_THEME: str = "dark"  # Default theme for user interface
     LANGUAGE_SUPPORT: List[str] = ["en", "es", "fr", "de", "zh", "ja"]  # Supported languages for the platform
-    USER_ONBOARDING_GUIDE: str = "https://docs.example.com/onboarding"  # Link to onboarding guide
-    USER_FEEDBACK_CHANNEL: str = "https://feedback.example.com"  # Channel for user feedback
+    USER_ONBOARDING_GUIDE: str = "https://docs.minepi.com/onboarding"  # Link to onboarding guide
+    USER_FEEDBACK_CHANNEL: str = "https://feedback.minepi.com"  # Channel for user feedback
     USER_TUTORIALS: List[str] = ["Getting Started", "Advanced Features", "Security Best Practices", "Staking Guide"]  # Available tutorials
     USER_CUSTOMIZATION_OPTIONS: List[str] = ["theme", "language", "notification preferences", "dashboard layout"]  # Options for user customization
 
