@@ -139,11 +139,6 @@ MIT License
 Contributions are welcome! Please open issues or pull requests for improvements or bug fixes.
 
 ---
-
-## Contact
-
-For questions or support, please contact the maintainers at support@pi-network.ai
-
 ---
 
 *This project is designed to provide the most powerful, unstoppable, and unmatched autonomous AI enforcement for Pi Network’s fixed Pi Coin value and mainnet integrity.*
