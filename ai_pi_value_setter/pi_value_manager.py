@@ -17,7 +17,7 @@ class PiValueManager:
     _instance = None
     _lock = threading.Lock()
 
-    FIXED_PI_VALUE = 314159  # Fixed Pi Coin value (integer or float as needed)
+    FIXED_PI_VALUE = 314159  # Fixed Pi Coin value (three hundred fourteen thousand one hundred fifty-nine)
 
     def __new__(cls, *args, **kwargs):
         """
