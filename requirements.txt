@@ -1,1 +1,4 @@
 nacl==1.4.0          # For cryptographic functions
+aiohttp>=3.8.1
+mypy>=0.910
+pytest>=7.0.0
