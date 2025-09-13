@@ -1,21 +1,37 @@
+# tests/test_cli.py
+
 import unittest
-import subprocess
+import asyncio
+from ai_pi_value_setter.cli import CLI
 
-class TestCLI(unittest.TestCase):
-    def test_cli_encode(self):
-        result = subprocess.run(['python', 'src/cli.py', 'encode', 'GABCDEF12345678901234567890123456789012345678901234567890123456', 
-                                 'GXYZABC12345678901234567890123456789012345678901234567890123456', '100.0'], 
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0)
-        self.assertIn("Encoded XDR:", result.stdout)
+class DummyPiCoin:
+    def __init__(self):
+        self.is_pure = False
+        self.badge = None
 
-    def test_cli_decode(self):
-        # Assuming we have a valid XDR hex string for testing
-        xdr_hex = "some_valid_xdr_hex_string"
-        result = subprocess.run(['python', 'src/cli.py', 'decode', xdr_hex], 
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0)
-        self.assertIn("Decoded Transactions", result.stdout)
+    def __repr__(self):
+        return f"<DummyPiCoin is_pure={self.is_pure} badge={self.badge}>"
 
-if __name__ == '__main__':
+class DummyTransaction:
+    def __init__(self, source, value=0):
+        self.source = source
+        self.value = value
+        self.pi_coin = DummyPiCoin()
+
+    def __repr__(self):
+        return f"<DummyTransaction source={self.source} value={self.value} pi_coin={self.pi_coin}>"
+
+class TestCLI(unittest.IsolatedAsyncioTestCase):
+
+    async def test_process_transactions(self):
+        cli = CLI()
+        transactions = [
+            DummyTransaction("mining", 1000),
+            DummyTransaction("exchange", 2000),
+            DummyTransaction("p2p", 3000),
+        ]
+        # Run the async method and ensure no exceptions occur
+        await cli.process_transactions(transactions)
+
+if __name__ == "__main__":
     unittest.main()
